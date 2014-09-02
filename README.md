@@ -1,7 +1,7 @@
 # sails-test
 
-Taking the Sails framework for a test drive. Code is for learning purposes onlu and
-should not be used. Assuming it works at all.
+Taking the Sails framework for a test drive. Code is for learning purposes only and
+should not be used. Total rust-bucket.
 
 ----
 
