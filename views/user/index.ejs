@@ -12,7 +12,7 @@
 				<form action="/user/destroy/<%= user.id %>" method="post">
 					<input type="hidden" name="_method" value="delete"/>
 					<input type="submit" value="Delete"/>
-					<input type="hidden" name="_csrf" value="<% _csrf %>" />
+					<input type="hidden" name="_csrf" value="<%= _csrf %>" />
 				</form>
 			</li>
 		</ul>

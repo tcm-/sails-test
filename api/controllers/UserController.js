@@ -32,7 +32,7 @@ module.exports = {
 			if (err) return next(err);
 			if (!user) return next();
 			res.view({
-				users: users	
+				user: user	
 			});
 		});
 	},
@@ -40,18 +40,36 @@ module.exports = {
 	index: function (req, res, next) {
 		User.find(function foundUsers (err, users) {
 			if (err) return next(err);
+			if (!users) return next();
+			res.view({
+				users: users
+			});
+		});
+	},
+
+	edit: function (req, res, next) {
+	
+		User.findOne(req.param('id'), function foundUser(err, user) {
+			if (err) return next(err);
 			if (!user) return next();
 			res.view({
 				user: user	
 			});
 		});
+	
 	},
 
 	update: function (req, res, next) {
 	
-		User.update(req.param('id'), req.param.all(), function updatedUser (err) {
+		/* var userObj = {
+			name: req.param('name'),
+			title: req.param('title'),
+			email: req.param('email')
+		} */
+
+		User.update(req.param('id'), req.params.all(), function userUpdated (err) {
 			if (err) {
-				return res.redirect('/user/edit'+req.param('id'));
+				return res.redirect('/user/edit/'+req.param('id'));
 			}	
 			res.redirect('/user/show/'+req.param('id'));
 		});
