@@ -7,10 +7,13 @@
 
 module.exports = {
 
+  schema: true,
+
   attributes: {
+
 		name: {
 			type: 'string',
-			required: 'true'
+			required: true
 		},
 		title: {
 			type: 'string'	
@@ -19,11 +22,22 @@ module.exports = {
 			type: 'string',
 			email: true,
 			required: true,
-			unique: true,
+			unique: true
 		},
 		encryptedPassword: {
 			type: 'string'	
 		},
+
+		
+		toJSON: function() {
+			var obj = this.toObject();	
+			delete obj.password;
+			delete obj.confirmation;
+			delete obj.encryptedPassword;
+			delete obj._csrf;
+			return obj;
+		}
+		
   }
 };
 
