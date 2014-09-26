@@ -1,6 +1,8 @@
 # sails-test
 
-Taking the Sails framework for a test drive. Code is for learning purposes only and should not be used, as it is basically just me working my way through some tutorials. This framework = really fun. This app = Total rust-bucket. 
+Taking the Sails framework for a test drive. This code is purely for learning
+purposes - I am working though the [sailsCasts](irlnathan.github.io/sailscasts/)
+screencast series.
 
 ----
 

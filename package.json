@@ -33,5 +33,8 @@
     "url": "git://github.com/tim/sails-test.git"
   },
   "author": "tim",
-  "license": ""
+  "license": "",
+  "devDependencies": {
+    "bcrypt": "^0.8.0"
+  }
 }

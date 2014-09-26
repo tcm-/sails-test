@@ -1,0 +1,17 @@
+<form action="/session/create" method="post">
+	<h2>Create Your Account</h2>
+
+	<% if(flash && flash.err) { %>
+		<ul>
+			<% Object.keys(flash.err).forEach(function(error) { %>
+				<li><%- JSON.stringify(flash.err[error]) %></li>
+			<% }) %>
+		</ul>
+	<% } %>
+
+	<input type="text" placeholder="Your email" name="email">
+	<input id="password" type="password" placeholder="Your password" name="password">
+	<input type="submit" value="Sign In">
+	<input type="hidden" name="_csrf" value="<%= _csrf %>">
+
+</form>
